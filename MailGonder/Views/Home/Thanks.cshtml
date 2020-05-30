@@ -1,0 +1,20 @@
+﻿@model MailGonder.Models.DavetiyeModel
+
+@{
+    ViewBag.Title = "Teşekkür Ederim";
+}
+
+<h1>Teşekkürler, @Model.Ad</h1>
+<h2>Kaydedilen mail adresiniz: @Model.Email</h2>
+
+<div class="lead">
+    @if (Model.KatilacakMi == true)
+    {
+        @:Gelmenize Çok Sevindik. Mail Adresinize Davet Maili Gönderilecektir.
+        @Html.Action("Katilanlar", "Home")
+    }
+    else
+    {
+        @:Gelemeyecek Olmana Üzüldük. İyi Çalışmalar diliyoruz.
+    }
+</div>
